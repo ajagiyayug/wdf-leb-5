@@ -1,7 +1,7 @@
 # Practical 5: Registration Form with Frontend Validation and User-Friendly Error Handling
 
 ## Practical Purpose
-This practical is designed to demonstrate client-side form validation and user-friendly error handling using HTML5 and modern JavaScript[cite: 4].
+This practical is designed to demonstrate client-side form validation and user-friendly error handling using HTML5 and modern JavaScript.
 
 ## What This Practical Is For
 * Creating a student registration form with proper HTML5 input types.
