@@ -1,0 +1,118 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Register - StudentHub</title> 
+  <link rel="stylesheet" href="assets/css/style.css"> 
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark-theme');
+  }
+  </script>
+</head> 
+<body class="auth-body"> 
+  <div class="card auth-card"> 
+    <h2 class="auth-title">Student Registration</h2> 
+     
+    <form id="register-form" novalidate> 
+       
+      <!-- Full Name --> 
+      <div class="form-group"> 
+        <label for="fullName">Full Name</label> 
+        <input type="text" id="fullName" class="form-control" placeholder="John Doe"> 
+        <span class="error-msg" id="nameError">Name must be at least 3 characters long (letters only).</span> 
+      </div> 
+ 
+      <!-- Email Address --> 
+      <div class="form-group"> 
+        <label for="email">Email Address</label> 
+        <input type="email" id="email" class="form-control" placeholder="example@domain.com"> 
+        <span class="error-msg" id="emailError">Please enter a valid email address.</span> 
+      </div> 
+ 
+      <!-- Mobile Number --> 
+      <div class="form-group"> 
+        <label for="mobile">Mobile Number</label> 
+        <input type="tel" id="mobile" class="form-control" placeholder="10-digit mobile number"> 
+        <span class="error-msg" id="mobileError">Please enter a valid 10-digit mobile number.</span> 
+      </div> 
+ 
+      <!-- Gender --> 
+      <div class="form-group"> 
+        <label>Gender</label> 
+        <div class="radio-group"> 
+          <label class="radio-label"><input type="radio" name="gender" value="Male"> Male</label> 
+          <label class="radio-label"><input type="radio" name="gender" value="Female"> Female</label> 
+          <label class="radio-label"><input type="radio" name="gender" value="Other"> Other</label> 
+        </div> 
+        <span class="error-msg" id="genderError">Please select your gender.</span> 
+      </div> 
+ 
+      <!-- Course & Year (Row) --> 
+      <div class="form-row"> 
+        <div class="form-group"> 
+          <label for="course">Course</label> 
+          <select id="course" class="form-control"> 
+            <option value="">-- Select Course --</option> 
+            <option value="B.Tech">B.Tech</option>
+            <option value="M.Tech">M.Tech</option>
+            <option value="B.Sc">B.Sc</option>
+            <option value="M.Sc">M.Sc</option>
+            <option value="BCA">BCA</option>
+            <option value="MCA">MCA</option>
+          </select>
+          <span class="error-msg" id="courseError">Select a course.</span>
+        </div>
+ 
+        <div class="form-group">
+          <label for="year">Year of Study</label>
+          <select id="year" class="form-control">
+            <option value="">-- Select Year --</option>
+            <option value="1st Year">1st Year</option>
+            <option value="2nd Year">2nd Year</option>
+            <option value="3rd Year">3rd Year</option>
+            <option value="4th Year">4th Year</option>
+          </select>
+          <span class="error-msg" id="yearError">Select year.</span>
+        </div>
+      </div>
+ 
+      <!-- Password (WITH STRENGTH METER) -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control" placeholder="••••••••">
+        <div class="strength-meter-container">
+          <div class="strength-meter-bar" id="strengthBar"></div>
+        </div>
+        <small class="strength-text" id="strengthText"></small>
+        <span class="error-msg" id="passwordError">Min 8 chars, 1 uppercase, 1 number & 1 special char required.</span>
+      </div>
+ 
+      <!-- Confirm Password --> 
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" class="form-control" placeholder="••••••••">
+        <span class="error-msg" id="confirmPasswordError">Passwords do not match.</span>
+      </div>
+ 
+      <!-- Terms Acceptance -->
+      <div class="form-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="terms">
+          I accept the Terms and Conditions 
+        </label>
+        <span class="error-msg" id="termsError">You must accept the terms to register.</span>
+      </div>
+ 
+      <button type="submit" class="btn btn-primary btn-block">Register</button>
+    </form>
+ 
+    <p class="auth-footer-text">
+      Already have an account? <a href="login.html" class="auth-link">Login here</a>
+    </p>
+  </div>
+ 
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+/* Variables & Base Configuration */
+:root { 
+  --primary: #4f46e5; 
+  --primary-hover: #4338ca; 
+  --secondary: #06b6d4; 
+  --bg-main: #f8fafc; 
+  --surface: #ffffff; 
+  --text-dark: #0f172a; 
+  --text-muted: #64748b; 
+  --border: #e2e8f0; 
+  --danger: #ef4444; 
+  --radius: 12px; 
+  --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05); 
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif; 
+} 
+
+html.dark-theme {
+  --bg-main: #0f172a;
+  --surface: #1e293b;
+  --text-dark: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.3);
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  font-family: var(--font-main); 
+} 
+
+body { 
+  background-color: var(--bg-main); 
+  color: var(--text-dark); 
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+} 
+
+/* Auth Layout & Card Styling */
+.auth-body { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  min-height: 100vh; 
+  padding: 2rem 1rem; 
+} 
+
+.card { 
+  background: var(--surface); 
+  padding: 1.5rem; 
+  border-radius: var(--radius); 
+  border: 1px solid var(--border); 
+  box-shadow: var(--shadow); 
+} 
+
+.auth-card { 
+  width: 100%; 
+  max-width: 520px; 
+} 
+
+.auth-title { 
+  margin-bottom: 1.5rem; 
+  text-align: center; 
+  color: var(--primary); 
+} 
+
+.auth-footer-text { 
+  text-align: center; 
+  margin-top: 1.5rem; 
+  font-size: 0.9rem; 
+  color: var(--text-muted); 
+} 
+
+.auth-link { 
+  color: var(--primary); 
+  font-weight: 600; 
+  text-decoration: none; 
+} 
+
+.auth-link:hover { 
+  text-decoration: underline; 
+} 
+
+/* Form Components */
+.form-group { 
+  margin-bottom: 1.25rem; 
+} 
+
+.form-row { 
+  display: flex; 
+  gap: 1rem; 
+} 
+
+.form-row .form-group { 
+  flex: 1; 
+} 
+
+.form-group label { 
+  display: block; 
+  font-size: 0.875rem; 
+  font-weight: 500; 
+  margin-bottom: 0.5rem; 
+} 
+
+.form-control { 
+  width: 100%; 
+  padding: 0.75rem; 
+  border: 1px solid var(--border); 
+  border-radius: var(--radius); 
+  outline: none; 
+  background-color: var(--surface); 
+  color: var(--text-dark); 
+} 
+
+.form-control:focus { 
+  border-color: var(--primary); 
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1); 
+} 
+
+.radio-group { 
+  display: flex; 
+  gap: 1.5rem; 
+  margin-top: 0.5rem; 
+} 
+
+.radio-label, .checkbox-label { 
+  display: flex; 
+  align-items: center; 
+  gap: 0.5rem; 
+  font-weight: normal; 
+  cursor: pointer; 
+} 
+
+.btn { 
+  padding: 0.6rem 1.2rem; 
+  border-radius: var(--radius); 
+  border: none; 
+  font-weight: 600; 
+  cursor: pointer; 
+  transition: opacity 0.2s; 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 0.5rem; 
+} 
+
+.btn-primary { 
+  background: var(--primary); 
+  color: white; 
+} 
+
+.btn:hover { 
+  opacity: 0.9; 
+} 
+
+.btn-block { 
+  width: 100%; 
+  justify-content: center; 
+  margin-top: 1rem; 
+} 
+
+/* Validation & Error Messages */
+.error-msg { 
+  color: var(--danger); 
+  font-size: 0.78rem; 
+  margin-top: 0.25rem; 
+  display: none; 
+} 
+
+.form-control.is-invalid { 
+  border-color: var(--danger); 
+} 
+
+/* Password Strength Meter */
+.strength-meter-container {
+  height: 6px;
+  width: 100%;
+  background-color: var(--border);
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.strength-meter-bar {
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-text {
+  display: block;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) { 
+  .form-row { 
+    flex-direction: column; 
+    gap: 0; 
+  } 
+}
